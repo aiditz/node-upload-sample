@@ -3,13 +3,14 @@
 var http = require('http');
 var express = require('express');
 var busboy = require('connect-busboy');
-
+var fs = require('fs');
 var app = express();
 var port = process.env.PORT || 3000;
 var server = http.createServer(app);
 
 initExpress();
 initRoutes();
+createUploadsDir();
 startServer();
 
 function initExpress() {
@@ -21,6 +22,12 @@ function initExpress() {
 
 function initRoutes() {
     app.use('/', require('./routes/list'));
+}
+
+function createUploadsDir() {
+    if (!fs.existsSync('./uploads')) {
+        fs.mkdirSync('./uploads');
+    }
 }
 
 function startServer() {
