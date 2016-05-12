@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>List</title>
+</head>
+<body>
+	<form method="POST" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit" value="Upload">
+	</form>
+	
+	<hr>
+	
+	<ul id="list">
+	</ul>
+	
+	<script>
+		var data = <%- JSON.stringify(data) %>;
+		
+		window.onload = function() {
+			if (!data) return;
+			var list = document.getElementById('list');
+			var html = '';
+			data.forEach(function(item) {
+				html += '<li><a href="/' + item + '">' + item + '</a></li>';
+			});
+			list.innerHTML = html;
+		};
+	</script>
+</body>
+</html>

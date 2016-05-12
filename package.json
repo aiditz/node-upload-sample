@@ -1,0 +1,22 @@
+{
+  "name": "upload-sample",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vladimir Muromskiy",
+    "email": "divineone@yandex.ru"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "debug": "node --debug src/app.js"
+  },
+  "engines": {
+    "node": ">=5.8.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "connect-busboy": "0.0.2",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {}
+}
